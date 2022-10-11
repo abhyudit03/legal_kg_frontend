@@ -1,0 +1,178 @@
+{
+    "akomaNtoso": {
+        "@xmlns": "http://www.example.org/",
+        "documentCollection": {
+            "@name": "act",
+            "meta": {
+                "activeRef": {
+                    "@href": "link to the affected document"
+                }
+            },
+            "preface": {
+                "p": {
+                    "legislature": "Central Legislature",
+                    "docType": "An Amendment",
+                    "docNumber": "No. 23 of 2019",
+                    "docTitle": {
+                        "@id": "ActTitle",
+                        "@refersTo": "#TheActTitle",
+                        "#text": "The Finance (No. 2) Act, 2019"
+                    },
+                    "docDate": [
+                        {
+                            "@date": "2019-08-01",
+                            "@refersTo": "#publicationDate",
+                            "p": "Date of Publication:",
+                            "#text": "1st August 2019"
+                        },
+                        {
+                            "@date": "2019-08-01",
+                            "@refersTo": "#commencementDate",
+                            "p": "Date of Commencement:",
+                            "#text": "1st August 2019"
+                        }
+                    ]
+                }
+            },
+            "preamble": {
+                "p": "An Act to give effect to the financial proposals of the Central Government for the financial year 2019-2020.",
+                "formula": {
+                    "@class": "preambleEnacted",
+                    "p": "ENACTED by Parliament in the Seventieth Year of the Republic of India as follows:-"
+                }
+            },
+            "collectionBody": {
+                "componentRef": [
+                    {
+                        "@id": "refc1",
+                        "@src": "#act",
+                        "@showAs": "Act"
+                    },
+                    {
+                        "@id": "refc2",
+                        "@src": "#memorandum",
+                        "@showAs": "Memorandum"
+                    }
+                ]
+            }
+        },
+        "components": {
+            "component": [
+                {
+                    "@id": "Act",
+                    "doc": {
+                        "@name": "act",
+                        "amendment": {
+                            "meta": {
+                                "activeRef": {
+                                    "@href": "link to the affected document"
+                                }
+                            },
+                            "preface": {
+                                "p": {
+                                    "legislature": "Central Legislature",
+                                    "docType": "Amendment",
+                                    "docNumber": [
+                                        "2",
+                                        "2"
+                                    ],
+                                    "docTitle": {
+                                        "@id": "ActTitle",
+                                        "@refersTo": "#TheActTitle",
+                                        "#text": "Prevention of Money Laundering (Amendment) Act, 2012"
+                                    },
+                                    "docDate": [
+                                        {
+                                            "@date": "2013-01-03",
+                                            "@refersTo": "#publicationDate",
+                                            "#text": "3rd January 2013"
+                                        },
+                                        {
+                                            "@date": "2013-02-15",
+                                            "@refersTo": "#commencementDate",
+                                            "#text": "15th February 2013"
+                                        }
+                                    ],
+                                    "#text": "An \n                             of 2013 No.\n                             of 2013\n                            \n                            Date of Publication: \n                            Date of Commencement:"
+                                }
+                            },
+                            "preamble": {
+                                "p": "An Act further to amend the Prevention of Money-laundering Act, 2002.",
+                                "formula": {
+                                    "@class": "preambleEnacted",
+                                    "p": "ENACTED by Parliament in the Sixty-third Year of the Republic of India as follows:-"
+                                }
+                            },
+                            "amendmentBody": {
+                                "amendmentHeading": {
+                                    "p": null
+                                },
+                                "amendmentContent": {
+                                    "mod": {
+                                        "@eid": "mod1",
+                                        "quotedStructure": [
+                                            {
+                                                "@eId": "mod_1__qst_1",
+                                                "@refersTo": "#initialVersion",
+                                                "p": "Whosoever directly or indirectly attempts to indulge or knowingly assists or knowingly is a party or is actually involved in any process \n                or activity connected with the proceeds of crime and projecting it as untainted property shall be guilty of offence of money laundering."
+                                            },
+                                            {
+                                                "@id": "mod_1__qst_2",
+                                                "@refersTo": "#newVersion",
+                                                "p": {
+                                                    "ins": "including its concealment, possession,acquisition or \n                use",
+                                                    "#text": "Whosoever directly or indirectly attempts to indulge or knowingly assists or knowingly is a party or is actually involved in any process \n                or activity connected with the proceeds of crime  and projecting it as untainted property shall be guilty of offence of money laundering."
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "@id": "memorandum",
+                    "doc": {
+                        "@name": "memorandum",
+                        "meta": null,
+                        "preface": {
+                            "p": {
+                                "docTitle": "EXPLANATORY MEMORANDUM"
+                            }
+                        },
+                        "body": {
+                            "content": {
+                                "p": "For the removal of doubts, it is hereby clarified that,-"
+                            },
+                            "tblock": [
+                                {
+                                    "num": "(i)",
+                                    "blockContainer": {
+                                        "p": "a person shall be guilty of offence of moneylaundering if such person is found to have directly or indirectly attempted to indulge or knowingly assisted or knowingly is a party or is actually involved in one or more of the following processes or activities connected with proceeds of crime, namely",
+                                        "blockList": {
+                                            "item": [
+                                                "concealment; or",
+                                                "possession; or",
+                                                "acquisition; or",
+                                                "use; or",
+                                                "projecting as untainted property; or",
+                                                "claiming as untainted property, in any manner whatsoever;"
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "num": "(ii)",
+                                    "blockContainer": {
+                                        "p": "the process or activity connected with proceeds of crime is a continuing activity and continues till such time a person is directly or\n                                            indirectly enjoying the proceeds of\n                                            crime by its concealment or\n                                            possession or acquisition or use or\n                                            projecting it as untainted property or\n                                            claiming it as untainted property in\n                                            any manner whatsoever."
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}

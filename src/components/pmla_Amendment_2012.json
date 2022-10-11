@@ -1,0 +1,70 @@
+{
+    "akomaNtoso": {
+        "@xmlns": "http://www.example.org/PreventionOfMoney-LaunderingAct-Amendment-2012",
+        "amendment": {
+            "meta": {
+                "activeRef": {
+                    "@href": "link to the affected document"
+                }
+            },
+            "preface": {
+                "p": {
+                    "legislature": "Central Legislature",
+                    "docType": "An Amendment",
+                    "docNumber": "No. 2 of 2013",
+                    "docTitle": {
+                        "@id": "ActTitle",
+                        "@refersTo": "#TheActTitle",
+                        "#text": "Prevention of Money Laundering (Amendment) Act, 2012"
+                    },
+                    "docDate": [
+                        {
+                            "@date": "2013-01-03",
+                            "@refersTo": "#publicationDate",
+                            "p": "Date of Publication:",
+                            "#text": "3rd January 2013"
+                        },
+                        {
+                            "@date": "2013-02-15",
+                            "@refersTo": "#commencementDate",
+                            "p": "Date of Commencement:",
+                            "#text": "15th February 2013"
+                        }
+                    ]
+                }
+            },
+            "preamble": {
+                "p": "An Act further to amend the Prevention of Money-laundering Act, 2002.",
+                "formula": {
+                    "@class": "preambleEnacted",
+                    "p": "ENACTED by Parliament in the Sixty-third Year of the Republic of India as follows:-"
+                }
+            },
+            "amendmentBody": {
+                "amendmentHeading": {
+                    "p": null
+                },
+                "amendmentContent": {
+                    "mod": {
+                        "@eid": "mod1",
+                        "quotedStructure": [
+                            {
+                                "@eId": "mod_1__qst_1",
+                                "@refersTo": "#initialVersion",
+                                "p": "Whosoever directly or indirectly attempts to indulge or knowingly assists or knowingly is a party or is actually involved in any process \n        or activity connected with the proceeds of crime and projecting it as untainted property shall be guilty of offence of money laundering."
+                            },
+                            {
+                                "@id": "mod_1__qst_2",
+                                "@refersTo": "#newVersion",
+                                "p": {
+                                    "ins": "including its concealment, possession,acquisition or \n        use",
+                                    "#text": "Whosoever directly or indirectly attempts to indulge or knowingly assists or knowingly is a party or is actually involved in any process \n        or activity connected with the proceeds of crime  and projecting it as untainted property shall be guilty of offence of money laundering."
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}
