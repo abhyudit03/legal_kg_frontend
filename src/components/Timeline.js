@@ -20,7 +20,7 @@ const EXAMPLE = [
     text1: "Preamble",
     text2: "An Act further to amend the Prevention of Money-laundering Act, 2002.",
     text3: "ENACTED by Parliament in the Sixty-third Year of the Republic of India as follows:-",
-    text4: "Ammendments",
+    text4: "Prevention of Money Laundering (Amendment) Act, 2012",
     text5: "Initial Version",
     text6: "Whosoever directly or indirectly attempts to indulge or knowingly assists or knowingly is a party or is actually involved in any process or activity connected with the proceeds of crime and projecting it as untainted property shall be guilty of offence of money laundering.",
     text7: "New Version",
