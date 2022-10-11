@@ -59,7 +59,7 @@ const Timeline = () => {
         <div  style={{
             width: "80%",
             height: "100px",
-            margin: "0 auto",
+            margin: "0",
             marginTop: "20px",
             fontSize: "15px"
           }}>
@@ -70,10 +70,10 @@ const Timeline = () => {
               outline: "#dfdfdf"
             }}
             minEventPadding={120}
-            linePadding={360}
+            linePadding={120}
             // labelWidth={150}
-            isOpenBeginning={false}
-            isOpenEnding={false}
+            // isOpenBeginning={false}
+            // isOpenEnding={false}
             index={curIndex}
             indexClick={(index) => {
               setPrevious(curIndex);
