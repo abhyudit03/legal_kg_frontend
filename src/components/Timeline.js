@@ -1,5 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import HorizontalTimeline from 'react-horizontal-timeline';
+import { useEffect, useState } from 'react';
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import Stepper from '@mui/material/Stepper';
+import Step from '@mui/material/Step';
+import StepLabel from '@mui/material/StepLabel';
+import StepConnector, { stepConnectorClasses } from '@mui/material/StepConnector';
+import ArticleIcon from '@mui/icons-material/Article';
+import { styled } from '@mui/material/styles';
+import PropTypes from 'prop-types';
+
 const EXAMPLE = [
   {
     data: "2003-01-17",
@@ -45,6 +54,85 @@ const EXAMPLE = [
   }
 ];
 
+const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
+  [`&.${stepConnectorClasses.alternativeLabel}`]: {
+    top: 22,
+  },
+  [`&.${stepConnectorClasses.active}`]: {
+    [`& .${stepConnectorClasses.line}`]: {
+      backgroundImage:
+        'linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)',
+    },
+  },
+  [`&.${stepConnectorClasses.completed}`]: {
+    [`& .${stepConnectorClasses.line}`]: {
+      backgroundImage:
+        'linear-gradient( 95deg,rgb(242,113,33) 0%,rgb(233,64,87) 50%,rgb(138,35,135) 100%)',
+    },
+  },
+  [`& .${stepConnectorClasses.line}`]: {
+    height: 3,
+    border: 0,
+    backgroundColor:
+      theme.palette.mode === 'dark' ? theme.palette.grey[800] : '#eaeaf0',
+    borderRadius: 1,
+  },
+}));
+
+const ColorlibStepIconRoot = styled('div')(({ theme, ownerState }) => ({
+  backgroundColor: theme.palette.mode === 'dark' ? theme.palette.grey[700] : '#ccc',
+  zIndex: 1,
+  color: '#fff',
+  width: 50,
+  height: 50,
+  display: 'flex',
+  borderRadius: '50%',
+  justifyContent: 'center',
+  alignItems: 'center',
+  ...(ownerState.active && {
+    backgroundImage:
+      'linear-gradient( 136deg, rgb(242,113,33) 0%, rgb(233,64,87) 50%, rgb(138,35,135) 100%)',
+    boxShadow: '0 4px 10px 0 rgba(0,0,0,.25)',
+  }),
+  ...(ownerState.completed && {
+    backgroundImage:
+      'linear-gradient( 136deg, rgb(242,113,33) 0%, rgb(233,64,87) 50%, rgb(138,35,135) 100%)',
+  }),
+}));
+
+function ColorlibStepIcon(props) {
+  const { active, completed, className } = props;
+
+  const icons = {
+    1: <ArticleIcon />,
+    2: <ArticleIcon />,
+    3: <ArticleIcon />,
+  };
+
+  return (
+    <ColorlibStepIconRoot ownerState={{ completed, active }} className={className}>
+      {icons[String(props.icon)]}
+    </ColorlibStepIconRoot>
+  );
+}
+
+ColorlibStepIcon.propTypes = {
+  /**
+   * Whether this step is active.
+   * @default false
+   */
+  active: PropTypes.bool,
+  className: PropTypes.string,
+  /**
+   * Mark the step as completed. Is passed to child components.
+   * @default false
+   */
+  completed: PropTypes.bool,
+  /**
+   * The label displayed in the step icon.
+   */
+  icon: PropTypes.node,
+};
 
 const Timeline = () => {
   const [curIndex, setCurIndex] = useState(0);
@@ -56,33 +144,19 @@ const Timeline = () => {
 
   return (
       <div style={{'display': 'flex', 'flexDirection': 'column', 'alignItems': 'center', 'justifyContent': 'center'}}>
-        <div  style={{
-            width: "80%",
-            height: "100px",
-            margin: "0",
-            marginTop: "20px",
-            fontSize: "15px"
-          }}>
-          <HorizontalTimeline
-            styles={{
-              background: "#f8f8f8",
-              foreground: "#1A79AD",
-              outline: "#dfdfdf"
-            }}
-            minEventPadding={120}
-            linePadding={120}
-            // labelWidth={150}
-            // isOpenBeginning={false}
-            // isOpenEnding={false}
-            index={curIndex}
-            indexClick={(index) => {
-              setPrevious(curIndex);
-              setCurIndex(index);
-              
-            }}
-            values={EXAMPLE.map((x) => x.data)} />
-        </div>
-        <div style={{'background': '#eee', width: '80vw', padding:'0% 2% 2% 2%'}}>
+         <Box sx={{ width: '100%' }} style={{'margin': '2%'}}>
+          <Stepper alternativeLabel activeStep={curIndex} connector={<ColorlibConnector />}>
+            {EXAMPLE.map((label, idx) => (
+              <Step key={idx} onClick={() => {
+                setPrevious(curIndex);
+                setCurIndex(idx);
+              }}>
+                <StepLabel StepIconComponent={ColorlibStepIcon}>{label.data}</StepLabel>
+              </Step>
+            ))}
+          </Stepper>
+        </Box>
+        <div style={{'background': '#eee', 'width': '80vw', 'padding':'0% 2% 2% 2%'}}>
           <div className='text-center'>
             <h3>{curStatus.text1}</h3>
           </div>
